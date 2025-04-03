@@ -1,17 +1,13 @@
 ---
-name: Lorena Abad
-position: "Researching the Environment through Geospatial Technologies"
+name: Luc Souilla
+position: "Post-doctoral fellow"
 address: |
-         | Schillerstraße 30, 5020 Salzburg, Austria
-profilepic: lore-2023.jpg
-phone: +43 662 8044 7582 
-email: "lorena.abad@plus.ac.at"
-twitter: loreabad6
-mastodon: loreabad6@fosstodon.org
-github: loreabad6
-linkedin: lorena-abad
-researchgate: Lorena_Abad2
-orcid: 0000-0003-0554-734X
+         | Montréal,Canada 
+profilepic: "Photoperso2"
+email: lucsouilla@gmail.com
+orcid: 0000-0002-5773-1440
+github: Souilla-Luc
+researchgate: Luc_Souilla
 headcolor: 009ACD
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
@@ -41,189 +37,51 @@ library(huxtable)
 library(gridExtra)
 ```
 
-```{r}
-# \paragraphstyle{I am an environmental engineer from Cuenca, Ecuador specialized in Geospatial Technologies, expected by March 2019. My research scope includes spatial data analysis, particularly focused on R programming; remote sensing and earth observation data analysis, specially optical satellite imagery applied to environmental studies and analyses such as air pollution, land use/land cover change; geostatistical analysis of climate data; and ecological modelling. I feel very keen to pursue a career in research, science, and academia.}
+# \faIcon{user-circle} About me
+
+During my PhD, I assessed health-related physical fitness and physical activity, and implemented cardiac rehabilitation programs for children and adolescents with inherited cardiac diseases. I am currently pursuing a post-doctoral position, concentrating on the impact of heat exposure on the health of children with heart diseases.
+
+<!-- | Nationality: French, Birthdate: 28/09/1998 -->
+
+
+# \faIcon{thumbtack} Current position
+```{r echo=FALSE}
+tribble(
+  ~ degree, ~ uni, ~ loc, ~ dates, ~ details ,
+
+  "Post-doctoral position", "EPIC center - Montreal Heart Institute", "Montreal, Canada", "Nov. 2024 - Nov. 2026",
+      list("Impact of prolonged heat on health",
+         "Supervised by Pr. Daniel Gagnon")
+)%>%
+detailed_entries(uni, dates, degree, loc, details)
 ```
 
-<!-- | Nationality: Ecuadorian, Birthdate: 05/01/1994 -->
 
-\faIcon{plane} My journey
-============================
 
-```{r edu_plot,fig.align='center', fig.width=6.1, fig.height=2.25, fig.showtext=TRUE, fig.dpi=300}
-load.fontawesome()
-uni = fontawesome('fa-university')
-work = fontawesome('fa-briefcase')
-# teach = fontawesome('fa-chalkboard')
-
-world = ne_countries("medium", returnclass = 'sf')
-cities_geom = st_sfc(
-    st_point(c(-79.00453,-2.90055)),
-    st_point(c(-9.13333,38.71667)),
-    st_point(c(7.6261,51.9607)),
-    st_point(c(12.9864,47.8029))
-  ) 
-
-cities = st_sf(
-  name = c('Cuenca, EC','Lisbon, PT','Münster, DE', 'Salzburg, AT'),
-  geometry = cities_geom
-  ) |>
-  st_set_crs(4326) |>
-  mutate(
-    label = c(
-      paste(work,uni, sep = " "),
-      rep(uni,2),
-      paste(work,uni, sep = " "))
-  )
-
-routes = cities |> 
-  as_sfnetwork() |> 
-  st_as_sf('edges') |> 
-  st_segmentize(units::set_units(1000, m))
-
-ggplot() +
-  geom_sf(data = world, color = 'white', lwd = 0.1) +
-  geom_sf_text(
-    data = cities,
-    aes(label = label),
-    size = 3,
-    color = '#009ACD',
-    family = "fontawesome-webfont"
-  ) +
-  geom_sf(
-    data = routes,
-    color = '#009ACD',
-    size = 1, alpha = 0.5,
-    linetype = 21
-  ) +
-  coord_sf(
-    crs = '+proj=vandg',
-    xlim = c(-14000000, 7000000),
-    ylim = c(-750000,8000000)
-  ) +
-  theme_void() +
-  theme(
-    plot.margin = margin(-1, 0, -0.8, 0, "cm")
-  )
-```
-
-\faIcon{briefcase} Professional Experience
-============================================
-
-```{r experience, eval = T}
-exp = rorcid::orcid_employments("0000-0003-0554-734X") |>
-  purrr::map(purrr::pluck, "affiliation-group", "summaries") |> 
-  purrr::flatten_dfr()
-names(exp) = stringr::str_remove(string = names(exp), pattern = "employment-summary.") 
-
-exp |>
-  filter(!stringr::str_detect(`role-title`, 'Teaching')) |>
-  filter(!stringr::str_detect(`role-title`, 'Lecturer')) |>
-  filter(!stringr::str_detect(`role-title`, 'Internship')) |>
-  mutate(`role-title` = case_when(
-    stringr::str_detect(`department-name`, "Carrera de Ingeniería Ambiental") ~ "Research Assistant",
-    TRUE ~ `role-title`
-  )) |> 
-  mutate(`start-date.month.value` = case_when(
-    stringr::str_detect(`department-name`, "Carrera de Ingeniería Ambiental") ~ "03",
-    TRUE ~ `start-date.month.value`
-  )) |> 
-  mutate(`end-date.year.value` = case_when(
-   stringr::str_detect(`department-name`, "Carrera de Ingeniería Ambiental") ~ "2017",
-    TRUE ~ `end-date.year.value`
-  )) |>
-  mutate(`end-date.month.value` = case_when(
-    stringr::str_detect(`department-name`, "Carrera de Ingeniería Ambiental") ~ "08",
-    TRUE ~ `end-date.month.value`
-  )) |> 
-  mutate(count = c(1,13,1,1,1,1)) |> 
-  tidyr::uncount(count) |> 
-  mutate(description = c(
-    'Researching Earth observation data analysis techniques for geomorphology and landscape dynamics applications.',
-    'Remote sensing and GIS specialist studying natural geohazards in the Risk, Hazard & Climate and EO Analytics research groups for different projects, including:',
-    'RAVEN: Radar satellite-based change detection in structures',
-    'LEONA: Landslide Information from Earth Observation to Support Humanitarian Aid',
-    'ROGER: EO-based rock glacier mapping and characterisation',
-    'ReHIKE: Analysing Glacier Retreat Effects on Alpine Hiking Infrastructure using Earth Observation',
-    'ArcDune: Sand dunes and Holocene environmental change in the European Arctic',
-    'SPACE4AD: Energieraumplanung zur Bestimmung neuer Biogasanlagenstandorte basierend auf Nicht-EOund Sentinel-2 Daten.',
-    'SliDEM: Assessing the suitability of DEMs derived from Sentinel-1 for landslide volume estimation | Role: Python package developer.',
-    'MontEO: The impact of mass movements on alpine trails and huts assessed by EO data | Role: Susceptibility mapping.',
-    'STEC: Smarter Targeting of Erosion Control | Role: Mapping geomorphological features with deep learning and knowledge-based techniques.',
-    'RiCoLa: Detection and Analysis of Landslide-induced River Course Changes and Lake Formation.',
-    'MORPH: Mapping, Monitoring and Modelling the Spatio-Temporal Dynamics of Land Surface Morphology.',
-    'citizenMorph: Observation and Reporting of Landscape Dynamics by Citizens.',
-    'Spatio-temporal data analyst for the project Pies y Pedales: Study of Cyclists and Pedestrian Mobility Patterns in Cuenca for a Sustainable Mobility.',
-    'CEDIA project: Geo-statistical Inference of Meteorological Data for Azuay and Chimborazo provinces.',
-    'Project: Water Quality and Environmental Variables Monitoring in Artificial Habitats for Endangered Species in Cuenca.',
-    'Project: Determination of Particulate Matter PM10, PM2.5, and noise in Cuenca canton.'
-    #\\href{http://monteo.zgis.at/}{\\textit{MontEO}}
-    # 'Remote Sensing course for the Environmental Engineering Career from the University of Cuenca.',
-    # 'Introduction to Physics course for the Environmental Engineering Career from the University of Cuenca.'
-    # "Cartographic data gathering organization, topographic correction and categorization of urban land uses, scientific papers analysis for bibliographic review.",
-    # "Assess the functioning state of Davis Station sensors, identify similarities and differences of two river basins hydrograms, analyze the effects of temperature and relative humidity on reference evapotranspiration calculation."
-  )) |>
-  detailed_entries(
-    with = paste(`role-title`, `department-name`, sep = ' - '),
-    when = paste(
-      paste(`start-date.month.value`,`start-date.year.value`, sep = ', '),
-      ifelse(is.na(`end-date.year.value`),"Present",paste(`end-date.month.value`,`end-date.year.value`, sep = ', ')),
-      sep = ' - '
-    ),
-    what = organization.name,
-    where = paste(organization.address.city,organization.address.country, sep =', '),
-    why = description,
-    .protect = TRUE
-  )
-```
-
-<!--
-\faIcon{chalkboard} Teaching Experience
-============================================
-
-```{r teaching, eval = T}
-exp |>
-  filter(
-    stringr::str_detect(`role-title`, 'Teaching') |
-      stringr::str_detect(`role-title`, 'Lecturer')
-    ) |> 
-  mutate(count = c(2,2)) |> 
-  tidyr::uncount(count) |> 
-  mutate(description = c(
-    'IP: Application Development - GIS - R for reproducible spatial workflows',
-    'Scientific Methods and Writing',
-    'Remote Sensing',
-    'Introduction to Physics'
-  )) |>
-  detailed_entries(
-    with = paste(`role-title`, `department-name`, sep = ' - '),
-    when = paste(
-      paste(`start-date.month.value`,`start-date.year.value`, sep = ', '),
-      ifelse(is.na(`end-date.year.value`),"Present",paste(`end-date.month.value`,`end-date.year.value`, sep = ', ')),
-      sep = ' - '
-    ),
-    what = organization.name,
-    where = paste(organization.address.city,organization.address.country, sep =', '),
-    why = description
-    # .protect = FALSE
-  )
-```
--->
 
 \faIcon{university} Education
 ==================================
 
 ```{r education}
-tribble(
-  ~ study, ~ university, ~ loc, ~ dates, ~ details,
-    "PhD in Geoinformatics", "University of Salzburg","Salzburg, AT", "2022 - 2026", "Topic: Raster and vector Earth observation data cubes for landscape dynamics.",
-    "PhD in Geoinformatics", "University of Salzburg","Salzburg, AT", "2022 - 2026", "Supervised by Assoc. Prof. Dr. Dirk Tiede.",
-    "Erasmus Mundus Msc. Geospatial Technologies", "New University of Lisbon \\& University of Münster","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Geospatial Data Mining, Geostatistics, Remote Sensing, Geographic Information Science, Spatial Data Science with R and Python.",
-    "Erasmus Mundus Msc. Geospatial Technologies", "New University of Lisbon \\& University of Münster","Lisbon, PT \\& Münster, DE", "2017 - 2019", "Masters Thesis: Validating a bike network analysis score based on open data as a connectivity measure of urban cycling infrastructure adapted for European cities. Supervised by Prof. Dr. Edzer Pebesma. URL: \\textit{http://hdl.handle.net/10362/67511}",
-  "Environmental Engineer BSc.", "University of Cuenca", "Cuenca, EC", "2011 - 2016", "Environmental Studies, Natural Resources Management, Cartography, Remote Sensing, Ecology, Hydrology, Meteorology and Climatology, among 66 subjects.",
-  "Environmental Engineer BSc.", "University of Cuenca", "Cuenca, EC", "2011 - 2016", "Bachelor Thesis (in spanish): Particulate Matter less than 10 microns concentration estimation through Remote Sensing in the Urban Area of Cuenca city. Supervised by MSc. Danilo Mejía Coronel. URL: \\textit{http://dspace.ucuenca.edu.ec/handle/123456789/25484}",
-) |> 
-  detailed_entries(study, dates, university, loc, details, .protect=FALSE)
+
+ tribble(
+  ~ degree, ~ uni, ~ loc, ~ dates, ~ details ,
+
+  "PhD Fellow and Associate Lecturer", "Sport Science Faculty - Montpellier University", "Montpellier, France", "Oct. 2021 - Sept. 2024",
+      list("Evaluation and optimisation of physical fitness and physical activity in children with inherited cardiac diseases",
+         " Supervised by Pr. Pascal Amedro, Pr.Jean-Luc Pasquie, Pr.Denis Mottet"),
+
+  "MSc degree in sport sciences and exercise rehabilitation", "Sport Science Faculty", "Montpellier, France", "Sep. 2020 - July. 2021",
+      list(" Sciences, Technology, Movement, top of the class."),
+
+  "BSc in sport Sciences - exercise and health", "Sport Science Faculty", "Toulouse and Montpellier, France", "Sep. 2018 - July. 2019",
+  list(" Exercise and chronic conditions, top of the class. ")
+
+ # "High-School Diploma in Science", "Pierre D'Aragon High School", "Muret, France", #"Sep. 2016 - July. 2017",
+  #list("Physics, Chemistry, Maths, Life sciences.",
+    #   "good rank.")
+  )%>%
+  detailed_entries(uni, dates, degree, loc, details)
 ```
 
 \faIcon*{file} Selected Publications
@@ -231,26 +89,188 @@ tribble(
 
 \scriptsize
 
-For a complete list of publications see [*my Google Scholar profile*](https://scholar.google.com/citations?user=vDqPwpUAAAAJ&hl=en).
 
-- **Abad, L.**, Sudmanns, M., Hölbling, D. W. (2024). [*Vector data cubes for features evolving in space and time*](https://doi.org/10.5194/agile-giss-5-16-2024). AGILE GIScience Ser., 5(16). 
-- **Abad, L.** (2024). [*Geomorphic landform monitoring with raster and vector data cubes*](https://doi.org/10.5194/egusphere-egu24-10019). EGU General Assembly 2024, Vienna, Austria.
-- **Abad, L.**, Hölbling, D., Spiekermann, R., Prasicek, G., Dabiri, Z., Argentin, A.-L. (2022). [*Detecting landslide-dammed lakes on Sentinel-2 imagery and monitoring their spatio-temporal evolution following the Kaikōura earthquake in New Zealand*](https://doi.org/10.1016/j.scitotenv.2022.153335). Science of The Total Environment, 820, 153335. 
-- **Abad, L.**, Hölbling, D. W., Dabiri, Z., Robson, B. A. (2022). [*An open-source-based workflow for DEM generation from Sentinel-1 for landslide volume estimation*](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLVIII-4-W1-2022/5/2022/). ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 48, 4/W1-2022, p. 5-11.
-- **Abad, L.**, Hölbling, D., Albrecht, F., Dias, H. C., Dabiri, Z., Reischenböck, G., Tešić, D. (2022). [*Mass movement susceptibility assessment of alpine infrastructure in the Salzkammergut area, Austria*](https://doi.org/https://doi.org/10.1016/j.ijdrr.2022.103009). International Journal of Disaster Risk Reduction, 103009. 
-- Hennig, S., **Abad, L.**, Hölbling, D., Tiede, D. (2022). [*Citizen science and geomorphology: the citizenMorph pilot system for observing and reporting data on landforms*](https://doi.org/10.1088/1748-9326/ac8235). Environmental Research Letters, 17(8), 085004. 
-- Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Assessment of Landslide-Induced Geomorphological Changes in Hítardalur Valley, Iceland, Using Sentinel-1 and Sentinel-2 Data*](https://doi.org/10.3390/app10175848). Applied Sciences, 10(17), 5848.
-- Hölbling, D., **Abad, L.**, Dabiri, Z., Prasicek, G., Tsai, T.-T., Argentin, A.-L. (2020). [*Mapping and Analyzing the Evolution of the Butangbunasi Landslide Using Landsat Time Series with Respect to Heavy Rainfall Events during Typhoons*](https://doi.org/10.3390/app10020630). Applied Sciences. 10, 630.
-- **Abad, L**., van der Meer, L. (2018). [*Quantifying Bicycle Network Connectivity in Lisbon Using Open Data*](https://doi.org/10.3390/info9110287). Information, 9(11), 14.
+```{r}
+#For a complete list of publications see [*my ORCID*](https://orcid.org/my-orcid?orcid=0000-0002-5773-1440).
+```
 
-<!-- - Dabiri, Z., Hölbling, D., **Abad, L.**, Guðmundsson, S. (2021). [*Comparing the Applicability of Sentinel-1 and Sentinel-2 for Mapping the Evolution of Ice-marginal Lakes in Southeast Iceland*](https://doi.org/10.1553/giscience2021_01_s46). GI_Forum, 1(1), 46–52. -->
-<!-- - Argentin, A. L., Robl, J., Prasicek, G., Hergarten, S., Hölbling, D., **Abad, L.**, Dabiri, Z. (2021). [*Controls on the formation and size of potential landslide dams and dammed lakes in the Austrian Alps*](https://doi.org/10.5194/nhess-21-1615-2021). Natural Hazards and Earth System Sciences, 21(5), 1615-1637.  -->
-<!-- - Dabiri, Z., Hölbling, D., **Abad, L.**, Helgason, J. K., Sæmundsson, Þ., Tiede, D. (2020). [*Generation of Multi-Temporal DEMs from Sentinel-1 for Assessing Geomorphological Changes in the Hítardalur Valley, Western Iceland*](https://doi.org/10.1130/abs/2020AM-357105). Geological Society of America Abstracts with Programs, 52 (6). -->
-<!-- - Hennig, S., **Abad, L.**, Hölbling, D., Tiede, D. (2020). [*Implementing Geo Citizen Science Solutions: Experiences from the citizenMorph Project*](https://doi.org/10.1553/giscience2020). Journal for Geographic Information Science, 7(2), 3–14. -->
-<!-- - **Abad, L.**, Hölbling, D., Spiekermann, R., Dabiri, Z., Prasicek, G., Argentin, A.-L. (2020). [*Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series -a case study after the 2016 Kaikōura Earthquake in New Zealand*](https://doi.org/10.5194/egusphere-egu2020-572). EGU General Assembly 2020. -->
-<!-- - **Abad, L.**, Mejia, D., Leon, P., Cardenas, I., Pacheco, B., Tonon, M. (2017). [*Water Quality and Environmental Variables on Endangered Amphibious’ Habitats in Cuenca’s City Urban Area*](http://dspace.ucuenca.edu.ec/retrieve/0c371040-81df-45c9-9167-37f5a1e5dc32/documento.pdf) (Spanish). Revista de la Facultad de Ciencias Quimicas, 18. p. 18-34. -->
+- **Souilla, L.**, Werner, o., Huguet, H., [...], Amedro, P., (2025). [*Cardiopulmonary Fitness and Physical Activity Among Children and Adolescents With Inherited Cardiac Disease*](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2830581). JAMA Open. 
+
+- **Souilla, L.**, Guillaumont, S., Auer, A., [...], Amedro, P., (2024). [*Cardiac rehabilitation in children and adolescents with long QT syndrome:the RYTHMO’FIT pilot study*](https://doi.org/10.1186/s13102-024-00941-2). BMC Sports Sci, Med and Rehab. 
+
+- **Souilla, L.**, Amedro, P., Morrison, S., (2024). [*Children with cardiac disease and heat exposure: catastrophic converging consequences?*](https://journals.humankinetics.com/view/journals/pes/aop/article-10.1123-pes.2023-0086/article-10.1123-pes.2023-0086.xml). Pediatric Exercise Science.
+
+- **Souilla, L.**, Larsen, A.C., Juhl, C., Skou, S.T., Bricca, A., (2024). [*Childhood and adolescence physical activity and multimorbidity later in life: A systematic review*](https://journals.sagepub.com/doi/10.1177/26335565241231403). Journal of Multimorbidity and Comorbidity,2024;14. doi: 10.1177/26335565241231403.
+
+- **Souilla, L.**, Avesani, M., [...], Pasquie, J-L., Guillaumont,S., and Amedro, P., (2023). [*Cardiorespiratory fitness, muscle fitness, and physical activity in children with long QT syndrome: A prospective controlled study*](https://www.frontiersin.org/articles/10.3389/fcvm.2022.1081106/full). Front. Cardiovasc. Med. 9:1081106.
+
+- Amedro, P., Gavotto, A., Huguet, H., **Souilla, L.**, [...] Guillaumont, S. (2024). [*Early hybrid cardiac rehabilitation in congenital heart disease: the QUALIREHAB multicentre randomized controlled trial*](https://doi.org/10.1093/eurheartj/ehae085). European Heart Journal.
+
+- Amedro, P., Matecki, S., [...], **Souilla, L.**, [...], Gavotto, A. (2023). [*Reference Values of Cardiopulmonary Exercise Test Parameters in the Contemporary Paediatric Population*](https://doi.org/10.1186/s40798-023-00622-3). Sports Medicine
+
+- Gavotto, A., Mura, T., [...], **Souilla, L.**, [...], Amedro, P. (2023). [*Reference values of aerobic fitness in the contemporary paediatric population*]( https://doi.org/10.1093/eurjpc/zwad054). European Journal of Preventive Cardiology.
+
+- Amedro, P., Werner,O., [...], **Souilla, L.**, [...], Pasquie, JL. (2021). [*Health-related quality of life and physical activity in children with inherited cardiac arrhythmia or inherited cardiomyopathy: the prospective multicentre controlled QUALIMYORYTHM study rationale, design and methods*](https://doi.org/10.1186/s12955-021-01825-6). Health Qual Life Outcomes., 28;19(1):187.
+
+
+
 \normalsize
 
+
+\faIcon{briefcase} Professional Experience
+============================================
+
+```{r experience, eval = T}
+tribble(
+  ~ position, ~ place, ~ loc, ~ dates, ~ details ,
+  
+  "Project manager","University of Sport Science","Montpellier, France", "Sept. 2023 - January. 2024",
+    list("Kickoff event on Sports and Climate Change", 
+         "Organizing an awareness day on climate change and the impact of sports for students"),
+  
+  "Research Mobility", "Southern Denmark University - Department of Sport Sciences and Clinical Biomechanics", "Odense, Denmark", "May. 2023 - July. 2023",
+      list("ERC projet MOBILIZE",
+         "Effect of tailored exercise program on multimorbidity / Systematic review on physical activity, childhood and multimorbidity"),
+  
+  "Research intern", "PhyMedExp - INSERM U1046", "Montpellier, France", "Sep. 2020 - July. 2021",
+      list("Supervised by Pascal Amedro",
+         "Cardiorespiratory fitness and muscular deconditioning in congenital Long QT syndrome children"),
+
+  "Research intern", "PhyMedExp - INSERM U1046", "Montpellier, France", "Sep. 2019 - July. 2020",
+  list("Supervised by Karen Lambert",
+         "Effects of exercise and polyphenols supplementation on cardiac hypertrophy in obese insulino-resistant rats."),
+
+  #"Adapted Physical Activity Teacher", "Paediatric Rehabilitation Center", "Palavas-Les-Flots, France", "July. 2019",
+  #list("Cardiology, Obesity and Diabetes ",
+         #"Creation and animation of adapted training sessions based on multiple physical activities")
+
+  #"Adapted Physical activity intern Student", "Paediatric Rehabilitation Center", "Palavas-Les-Flots, France", "January. 2019",
+ # list(" Cardiology, Obesity and Motricity disabilities ",
+       #  "Creation and animation of adapted training sessions based on multiple physical activities"),
+
+  # "Employé Municipal", "Mairie Montesquieu", "Montesquieu-Volvestre, France", "Summer. 2019",
+  #list(" 5 semaines - 105h ",
+    #     "Entretien des aespaces verts, organisation de fête du village"),
+
+  #"Stagiaire EAPA", "Étincelle occitanie", "Montpellier, France", "2018",
+ # list(" Maison associative cancer du sein - 75h ",
+   #      "Création de séances d'APA pour les femmes ayant eu un cancer du sein"),
+
+   #" Stagiaire EAPA", "Réseau Partn'Air ", "Saint_orens, France", "2018",
+ # list(" Réseau de santé pathologies respiratoires et hémopathies maligne ",
+    #     "Création de séances d'APA pour des patients en centre ou domicile ayant une affectation respiratoire"),
+
+  #" Stagiaire EAPA", "SADIR Assistance", "Portet-Sur-Garonne, France", "2017",
+ # list(" Prestataire de santé avec pathologies respiratoires- 50h ",
+    #     "Création de séances d'APA pour des patients ayant une affectation respiratoire"),
+
+  #" Préparateur Physique EAPA", "Iron Club", "Toulouse France", "2018",
+  #list(" Basket Fauteuil- Professionnel ",
+       #  "Animation séance cardio et Renforcement musculaire"),
+
+  #" Stagiaire EAPA", "A.S.E.I Philae", "Ramonville, France", "2018",
+#  list(" Centre d'accueil pour enfants/ado atant des affections neurologiques- 50h ",
+        # "Création de séances d'APA, observation, rendu rapport de stage"),
+
+ # " Employé logistique ", "IKEA", "Roques-Sur-Garonne, France", "2017",
+  #list("Travail dépot et magasin ",
+        # "Port d'objets lourds, mise en rayon, conseil client"),
+
+  #" Employé libre service ", "Carrefour City", "Toulouse, France", "2017",
+  #list("Caisse et facing dans rayon ",
+     #    "Rayon boulangerie, caisse, fermeture magasin, nettoyage"),
+  )%>%
+  detailed_entries(place, dates, position, loc, details)
+```
+
+\faIcon{chalkboard} Teaching Experience
+============================================
+
+```{r teaching, eval = T}
+
+tribble(
+  ~ position, ~ type, ~ loc, ~ dates, ~ details ,
+
+  " Associate lecturer", "University of Montpellier","Montpellier, France", "2022-2024",
+      list("Climate change, sustainability and sport sciences",
+        "Cardiac anatomy and physiology", "functional anatomy and biomechanics", "exercise physiology and health, neurosciences and sports","Scientific methods and identification of study design"
+          )
+
+  # "Mentoring Student Certification ", "University of Montpellier - 150 hours","Montpellier, France", "2019 - 2021",
+  #     list(" Helping bachelor's student in Sports sciences students",
+  #     "Exercise Biomechanics, exercise physiology, functional anatomy and neurosciences"),
+)%>%
+  detailed_entries(type, dates, position, loc, details)
+```
+
+
+\faIcon{handshake} Supervision mentoring
+============================================
+
+```{r}
+
+tribble(
+  ~ student, ~ type, ~ loc, ~ dates, ~ details ,
+  
+   "Mentoring MSc Student", "Sports Science University ","Bordeaux, France", "Oct. 2023-Oct. 2024",
+      list("Trained to cardiopulmonary exercise testing and accelerometry and designing research protocols",
+           "Help designing research protocol and writing dissertation and call for funding"), 
+  
+  "Mentoring BSc Student", "Sports Science University", "Montpellier, France", "Oct. 2023-Dec. 2023",
+      list("Mentoring student on the kickoff event on Sports and Climate Change",
+           "Individual support for developing their personals projects"),
+
+  "Mentoring MSc Student", "University Hospital of Pediatric Cardiology ","Bordeaux, France", "January 2023",
+      list("Help designing exercise interventions and writing dissertation and call for funding"),
+
+
+ # "Mentoring BSc Student", "Cardiology Paediatric Rehabilitation center ","Palavas-Les-Flots, France", "January 2022",
+     # list("Mentoring Julie Voldoire (BSc student) during their internship and discover scientifc area"),
+
+)%>%
+  detailed_entries(type, dates, student, loc, details)
+```
+
+
+# \faIcon{comment} Communications
+
+```{r}
+tribble(
+  ~ event, ~ type, ~ loc, ~ dates, ~ details ,
+  
+  # "Centre ÉPIC MENSUELLE", "Oral Presentation","Montréal, Canada", "February 2025",
+  #     list("Souilla L. (2025). Health-related physical fitness, physical activity and cardiac rehabilitation in children and adolescents with inhertied cardiac condition: un avenir prometteur?. "),
+  # Eventuellement ajouter l'AEPC 2025 
+   "International Congress of Association for European Paediatric Congenital Cardiology", "Oral Presentation","Porto, Portugal", "May 2024",
+      list("Souilla L., Guillaumont S., ..., Amedro P.(2024). Cardiac rehabilitation in children and adolescents with long QT syndrome: the RYTHMO’FIT pilot study. International Congress of Association for European Paediatric Congenital Cardiology"),
+  
+  "Heart and sport days of Cardiogen", "Oral Presentation", "Montpellier, France", "Jan. 2024",
+      list("Souilla L.(2024). Role of adapted physical activity in pediatric cardiac rehabilitation. Heart and sport days of Cardiogen"),
+  
+  "French federatation of Cardiology", "Oral Presentation", "Paris, France", "Sep. 2023",
+      list("Souilla L., Werner O., ..., Amedro P.(2023). Health-related quality of life and physical activity in children with inherited cardiac arrhythmia or inherited cardiomyopathy: the prospective multicentre controlled QUALIMYORYTHM. Research days of French federation of cardiology"),
+  
+  "International Congress of Francophone Mother-Children network", "Oral presentation","Bordeaux, France", "June 2022",
+      list(" Souilla L.(2022). Adapted physical activity teacher: on the right track. International Congress of Francophone Mother-Children network"),
+
+  "French society of Paediatric", "Oral presentation","Lille, France", "June 2022",
+      list("Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022).  Cardiorespiratory fitness and muscular deconditioning children with Long QT syndrome. French society of Paediatric"),
+
+  "International Congress of Association for European Paediatric Congenital Cardiology", "Poster Presentation","Geneve, Switzerland", "May 2022",
+      list("Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022). Cardiorespiratory fitness and muscular deconditioning children with Long QT syndrome. International Congress of Association for European Paediatric Congenital Cardiology"),
+
+  "Annual days of Cardiogen", "Oral presentation","Bordeaux, France", "March 2022",
+     list(" Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022). Evaluation of cardiorespiratory fitness and muscular deconditioning in children with Long QT syndrome. Annual days of Cardiogen"),
+
+  "Congress of French society of Paediatrics and congenital cardiology ", "Oral presentation","Nice, France", "Sept. 2021",
+      list("Souilla L.(2021). Exercise rehabilitation in heart failure. Congress of French society of Paediatrics and congenital cardiology"),
+
+  #"Days of adapted physical activity", "Poster presentation","Montpellier, France", "April, 2019",
+  #    list("Souilla L., Home-based exercise program for management of tiredness post-transplantation. Days of adapted physical"),
+)%>%
+  detailed_entries(type, dates, event, loc, details)
+
+```
 
 ```{r, out.width='57%', fig.align='center', fig.link="https://www.fabiocrameri.ch/proac/"}
 knitr::include_graphics("ProAc/ProAc-LorenaAbad.png")
@@ -270,15 +290,21 @@ knitr::include_graphics("ProAc/ProAc-LorenaAbad.png")
 
 <!--
 ```{r proj}
-tribble(
-  ~ name, ~ acronym, ~ date, ~study_area,
-  "Smarter Targeting of Erosion Control", "STEC", "2018 - 2023", "NZ", 
-  "The impact of mass movements on alpine trails and huts assessed by EO data", "MontEO \\href{http://monteo.zgis.at/}{\\tiny{\\faIcon{link}}}", "2020 - 2021", "AT", 
-  "Detection and Analysis of Landslide-induced River Course Changes and Lake Formation", "RiCoLa \\href{http://landslides-and-rivers.sbg.ac.at/}{\\tiny{\\faIcon{link}}}", "2017 - 2020", "AT, NZ, TW", 
-  "Observation and Reporting of Landscape Dynamics by Citizens", "citizenMorph \\href{http://citizenmorph.sbg.ac.at/}{\\tiny{\\faIcon{link}}}", "2018 - 2020", "AT, DE, IS", 
-  "Mapping, Monitoring and Modelling the Spatio-Temporal Dynamics of Land Surface Morphology", "MORPH \\href{http://morph.sbg.ac.at/}{\\tiny{\\faIcon{link}}}", "2016 - 2020", "IS"
-) |> 
-  detailed_entries(with = acronym, what = name, when = date, where = study_area, .protect=FALSE)  
+#tribble(
+ # ~ name, ~ acronym, ~ date, ~ study_type,
+
+#"Quality of life exercise capacity and physical activity of children with inherited cardiac disease", "QUALIYMORYTHM", "2021 - 2023",("Multicentric Controlled Trial \\href{https://clinicaltrials.gov/ct2/show/NCT04712136/}{\\tiny{\\faIcon{link}}}"),
+
+#"Exercise rehabilitation of children with long QT", "RYTHMO'FIT", "2022 - 2023",("Interventional Pilot study"), #\\href{https://clinicaltrials.gov/ct2/show/NCT04712136/}{\\tiny{\\faIcon{link}}}"),
+
+#"Home based exercise rehabilitation and cognitive training in children and adolescent with congenital heart defect", "QUALINEUROREHAB", "2023 - 2025",("European interventional trial \\href{https://clinicaltrials.gov/ct2/show/NCT05670132}{\\tiny{\\faIcon{link}}}"),
+
+#"Exercise rehabilitation for children with congenital heart defects and physical activity of children with inherited cardiac disease", "QUALIREHAB", "2018 - 2023",("Randomised Controlled Trial \\href{https://clinicaltrials.gov/ct2/show/NCT03690518}{\\tiny{\\faIcon{link}}}"),
+
+#penser  a ajouter etude sur envionnement avec Shawnda et L'étude avec danemark
+#)%>%
+#detailed_entries(with = acronym, what = name, when = date, where = study_type,
+#.protect=FALSE)
 ```
 
 \smallskip
