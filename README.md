@@ -4,4 +4,4 @@ My CV created with the [vitae](https://github.com/mitchelloharawild/vitae) packa
 
 
 
-[![CV](preview.pdf)](https://github.com/Souilla-Luc/CV/main/CV.pdf)
+[![CV](preview.jpg)](https://github.com/Souilla-Luc/CV/main/CV.pdf)
