@@ -37,14 +37,15 @@ library(huxtable)
 library(gridExtra)
 ```
 
-# \faIcon{user-circle} About me
+<!-- \faIcon{user-circle} About me -->
+<!-- ============================================ -->
 
-During my PhD, I assessed health-related physical fitness and physical activity, and implemented cardiac rehabilitation programs for children and adolescents with inherited cardiac diseases. I am currently pursuing a post-doctoral position, concentrating on the impact of heat exposure on the health of children with heart diseases.
+<!-- During my PhD, I assessed health-related physical fitness and physical activity, and implemented cardiac rehabilitation programs for children and adolescents with inherited cardiac diseases. I am currently pursuing a post-doctoral position, concentrating on the impact of heat exposure on the health of children with heart diseases. -->
 
 <!-- | Nationality: French, Birthdate: 28/09/1998 -->
 
-
-# \faIcon{thumbtack} Current position
+\faIcon{thumbtack} Current position
+============================================
 ```{r echo=FALSE}
 tribble(
   ~ degree, ~ uni, ~ loc, ~ dates, ~ details ,
@@ -112,6 +113,11 @@ detailed_entries(uni, dates, degree, loc, details)
 
 - Amedro, P., Werner,O., [...], **Souilla, L.**, [...], Pasquie, JL. (2021). [*Health-related quality of life and physical activity in children with inherited cardiac arrhythmia or inherited cardiomyopathy: the prospective multicentre controlled QUALIMYORYTHM study rationale, design and methods*](https://doi.org/10.1186/s12955-021-01825-6). Health Qual Life Outcomes., 28;19(1):187.
 
+```{r, out.width='57%', fig.align='center', fig.link="https://www.fabiocrameri.ch/proac/"}
+knitr::include_graphics("ProAc/ProAc-LucSouilla-2025-Apr.png")
+```
+<!-- [ProAc](https://www.fabiocrameri.ch/proac/) profile -->
+<!-- ----------------------------------------------------- -->
 
 
 \normalsize
@@ -204,6 +210,35 @@ tribble(
 ```
 
 
+
+\faIcon{dollar-sign} Funding, Grants and Fellowships
+============================================
+```{r grants}
+
+tribble(
+  ~ name, ~ origin, ~ amount, ~ dates, ~ details ,
+
+  "International mobility EXPLORE #4", "From Montpellier University of Excellence","5000€", "May-June 2023",
+      list("PhD mobility to Danemark, working on ERC grant funded project: MOBILIZE"),
+
+  "RYTHMO'FIT:interventional pilot study", " From Saint Pierre Fundation ","10 000 €", "July 2022",
+      list("Exercise rehabilitation program for children with long QT syndrome "),
+
+  "PhD fellowship", "From ED CBS2 Montpellier university ","110 000€", "Oct.2021-2024",
+      list(" PhD fellowship on promotion of adapted physical activity in children/adolescent with heart diseases :example of inherited arrhytmias "),
+
+  #"QUALIREHAB-ONCO: Effect of home based exercise rehabilitation program on  childhood cancer survivors ", "From ARC: Fundation for cancer research" ,"450 000$", "June 2021",
+  #list("Creation and drafting exercise program for childhood cancer survivors, final proof reading \\href{https://www.fondation-arc.org/projets/qualirehab-onco-remettre-les-enfants-au-sport-apres-un-cancer}{\\tiny{\\faIcon{link}}} ")
+
+  # "European Joint Programme on rare diseases ", "Bordeaux Hospital, France - Saint Luc, Belgium - Deustches Herzzentrum Munchen, Germany","650 000$", "2021",
+  #     list(" Helping drafting the physical activity part, final proofreading"),
+  #
+)%>%
+  detailed_entries(origin, amount, name, dates, details)
+```
+
+
+
 \faIcon{handshake} Supervision mentoring
 ============================================
 
@@ -232,15 +267,22 @@ tribble(
 ```
 
 
-# \faIcon{comment} Communications
+\faIcon{comment} Communications
+============================================
 
 ```{r}
 tribble(
   ~ event, ~ type, ~ loc, ~ dates, ~ details ,
   
+  # "Scientific Research Day of Kinesiology and Physical Activity School ", "Poster Presentation", "Montréal, Canada", "March 2025",
+  #     list("Souilla L. (2025). In situ responses of elderly people living in social housing before, during, and after a heatwave. "),
+  
   # "Centre ÉPIC MENSUELLE", "Oral Presentation","Montréal, Canada", "February 2025",
-  #     list("Souilla L. (2025). Health-related physical fitness, physical activity and cardiac rehabilitation in children and adolescents with inhertied cardiac condition: un avenir prometteur?. "),
-  # Eventuellement ajouter l'AEPC 2025 
+  #     list("Souilla L. (2025). Health-related physical fitness, physical activity and cardiac rehabilitation in children and adolescents with inhertied cardiac condition: a promising future?. "),
+  
+  # "International Congress of Association for European Paediatric Congenital Cardiology", "Poster Presentation","Hamburg, Germany", "May 2025",
+  #     list("Souilla L. (2025). Cardiopulmonary fitness and physical activity in pediatric inherited cardiac disease. "),
+  
    "International Congress of Association for European Paediatric Congenital Cardiology", "Oral Presentation","Porto, Portugal", "May 2024",
       list("Souilla L., Guillaumont S., ..., Amedro P.(2024). Cardiac rehabilitation in children and adolescents with long QT syndrome: the RYTHMO’FIT pilot study. International Congress of Association for European Paediatric Congenital Cardiology"),
   
@@ -265,18 +307,13 @@ tribble(
   "Congress of French society of Paediatrics and congenital cardiology ", "Oral presentation","Nice, France", "Sept. 2021",
       list("Souilla L.(2021). Exercise rehabilitation in heart failure. Congress of French society of Paediatrics and congenital cardiology"),
 
-  #"Days of adapted physical activity", "Poster presentation","Montpellier, France", "April, 2019",
+  #"Scientific Research Day of adapted physical activity", "Poster presentation","Montpellier, France", "April, 2019",
   #    list("Souilla L., Home-based exercise program for management of tiredness post-transplantation. Days of adapted physical"),
 )%>%
   detailed_entries(type, dates, event, loc, details)
 
 ```
 
-```{r, out.width='57%', fig.align='center', fig.link="https://www.fabiocrameri.ch/proac/"}
-knitr::include_graphics("ProAc/ProAc-LorenaAbad.png")
-```
-<!-- [ProAc](https://www.fabiocrameri.ch/proac/) profile -->
-<!-- ----------------------------------------------------- -->
 
 <!--
 \faIcon{lightbulb} Projects
@@ -309,67 +346,6 @@ knitr::include_graphics("ProAc/ProAc-LorenaAbad.png")
 
 \smallskip
 
-\faIcon{laptop-code} Programming projects
-----------------------------------
-<!-- \par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt} -->
-
-<!--
-```{r dev}
-tribble(
-  ~ name, ~ sum, ~ acronym, ~ type, ~ lang, ~ link,
-  "Landslide dammed-lakes detection and monitoring after the Kaikōura earthquake in New Zealand", 
-  "GEE project: Landslide dammed-lakes detection and monitoring in Kaikōura, NZ",
-  "Kaikoura landslide dammed-lakes \\href{https://github.com/loreabad6/KaikouraDammedLakes_public}{\\tiny{\\faLink}}", 
-  "GEE project",
-  "JavaScript",
-  "\\href{https://github.com/loreabad6/KaikouraDammedLakes_public}{\\faGithub}",
-  
-  "Blog: Lore Abad", 
-  "Lore Abad: Distill blog with my data science work", 
-  "Blog \\href{https://loreabad6.github.io/}{\\tiny{\\faLink}}", 
-  "Distill blog",
-  "R",
-  "\\href{https://loreabad6.github.io/}{\\faGlobe}",
-  
-  "Tidy Geospatial Networks in R", 
-  "\\textit{sfnetworks} Tidy Geospatial Networks in R", 
-  "sfnetworks \\href{https://luukvdmeer.github.io/sfnetworks/}{\\tiny{\\faLink}}", 
-  "R Package",
-  "R",
-  "\\href{https://luukvdmeer.github.io/sfnetworks/}{\\faGithub}",
-  
-  "Bicycle Network Analysis Score for UK and NL",
-  "BNA-EU: Bicycle Network Analysis Score for UK and NL",
-  "BNA-EU \\href{https://github.com/loreabad6/masters-thesis-geotech}{\\tiny{\\faLink}}", 
-  "RMarkdown Reporting",
-  "R \\& SQL",
-  "\\href{https://github.com/loreabad6/masters-thesis-geotech}{\\faGithub}"
-) |> 
-  brief_entries(with = lang, what = sum, when = link, .protect=FALSE)  
-```
--->
-<!--
-
-\faIcon{comments} Presentations, blogs, courses
-================================
-
-```{r presentations}
-tribble(
-  ~ title, ~ link, ~ event, ~ date,
-  "Mapping and monitoring landslide-dammed lakes in Kaikōura, New Zealand, using the Google Earth Engine", "Lightning Talk at the Geo For Good 2020 Summit Public Sector Meetup \\href{https://www.youtube.com/watch?v=CbHYkUpCwCI&ab_channel=GoogleEarth}{\\tiny{\\faIcon{link}}}", "Geo for Good 2020", "10, 2020",
-  "El rol de las tecnologías geoespaciales para el mapeo y monitoreo de peligros naturales", "Invited talk at the event 'Voces de la Ingeniería Ambiental' \\href{https://loreabad6.github.io/VocesAmbiental/presentacion.html}{\\tiny{\\faIcon{link}}}", "Voces Ambiental 2020", "09, 2020",
-  "Bicycle Network Analysis for assessing cyclability", "Presentation during Cycling Potential Hackathon: Lisbon \\href{https://github.com/U-Shift/cyclingpotential-hack}{\\tiny{\\faIcon{link}}}", "U-Shift event", "09, 2020",
-  "Implementing geo citizen science solutions: experiences from the citizenMorph project", "Full paper presentation in session C43: Spatial Citizens Science \\href{https://www.conftool.com/giweek2020/index.php?page=browseSessions&form_session=202}{\\tiny{\\faIcon{link}}}", "Gi-Forum 2020", "07, 2020",
-  "Tidy Geospatial Networks in R: Introducing the sfnetworks package", "Webinar \\& Hackathon \\href{https://sfnetworks.github.io/sfnetworks-webinar/slides}{\\tiny{\\faIcon{link}}}", "e-Rum 2020 satellite event", "06, 2020",
-  "Mapping and monitoring of landslide-dammed lakes using Sentinel-2 time series", "Display in session Natural Hazards NH6.1 \\href{https://presentations.copernicus.org/EGU2020/EGU2020-572_presentation.pdf}{\\tiny{\\faIcon{link}}}", "EGU 2020", "05, 2020",
-  "Intro to spatial vector data analysis with R","R spatial crash course \\href{https://luukvdmeer.github.io/maptimeR/exercises.html}{\\tiny{\\faIcon{link}}}", "Maptime Salzburg", "02, 2020",
-  "Spatial networks in R with sf and tidygraph", "Blogpost \\href{https://www.r-spatial.org/r/2019/09/26/spatial-networks.html}{\\tiny{\\faIcon{link}}}", "r-spatial blog", "09, 2019",
-  "Bicycle Network Analysis for Lisbon", "Short Paper Presentation in the 2nd Open Data for Open Cities Workshop \\href{https://github.com/GeoTecINIT/OpenData4OpenCities/blob/master/Presentations/AGILE_2018_Presentation_Abad-vdMeer.pdf}{\\tiny{\\faIcon{link}}}", "AGILE Workshop: OD4OC", "06, 2018",
-  "Exploring Space-Time Patterns Of Volunteered Cycling Data In An Intermediate City", "Abstract Presentation", "GeoMundus 2017", "11, 2017"
-) |> 
-  detailed_entries(with = title, what = link, where = event, when = date, .protect=FALSE)  
-```
--->
 
 <!-- \faIcon{medal} Awards & Distinctions -->
 <!-- =============================== -->
@@ -390,141 +366,173 @@ tribble(
 #   brief_entries(what = area, when = date, with = org, .protect = F)
 ```
 
-<!-- \faIcon{hand-holding-heart} Volunteer work -->
-<!-- =============================== -->
-
-```{r vol}
-# tribble(
-#   ~ desc, ~ date,
-#   "Group Peer Mentor in Women in Geospatial+ Mentorship Program", "2020-2021"
-# ) |>
-#   brief_entries(what = desc, when = date, .protect = F)
-```
 
 \faIcon{brain} Skills
 ================================
 
 \smallskip
 
-\faIcon{language} Languages
--------------------------------
-
-```{r langforeign, results='markup'}
-data.frame(
-  Skill = c("Reading", "Writing", "Listening","Speaking"),
-  Spanish = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'), 
-  English = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#009acd'), 
-  French = cell_spec(c("B2","B2","B2","B1"), 'latex', color = '#4cb8dc'), 
-  German = cell_spec(c("B1","B1","B1","B1"), 'latex', color = '#4cb8dc'), 
-  Portuguese = cell_spec(c("B1","A2","B1","A2"), 'latex', color = '#4cb8dc'), 
-  Dutch = cell_spec(c("A2","A1","A2","A2"), 'latex', color = '#7fcce6') 
-) |>
-  kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
-  kable_styling(full_width = F, font_size = 9, latex_options = "HOLD_position") |> 
-  footnote(
-    footnote_as_chunk = T,
-    general_title = " ",
-    general = "\\\\tiny Common European Framework of Reference for Languages: A1/A2: Basic User. B1/B2: Independent User. C1/C2: Proficient User",
-    escape = F
-  ) |>
-  column_spec(column = 1:6, width = '2.4cm') #|> 
-  # add_header_above(' ', line = F) |>
-  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
+\faIcon{users} Soft skills
+---------------------------------
+```{r workplace skills, results='markup'}
+tribble(
+    ~ Teamwork, ~Attributs,
+"Pluridisciplinary Working -- Effective communication -- Autonomous writing -- Management of national clinicals trials (coordination and call for proposal)",
+  "Creativity -- Adaptability -- Time management -- Motivation -- Relationship skills"
+) %>%
+  kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
+  kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") %>%
+  row_spec(0, bold = T, color = "#009acd") %>%
+  row_spec(1, bold = F, color = "#7f7f7f") %>%
+  column_spec(column = 1:2, width = '8 cm')
 ```
 
 \faIcon{cogs} Technical skills
 ---------------------------------
 
 ```{r techtable, results='markup'}
-# tribble(
-#    ~type, ~desc,
-#    "Coding Languages",
-#     "R -- Python -- SQL -- JavaScript",
-#    "Software",
-#   "QGIS -- Earth Engine -- SAGA -- PostgreSQL -- ArcGIS -- GIMP",
-#    "Other",
-#   "Git -- Markdown -- LaTex -- OpenStreetMap"
-# ) |>
-#   brief_entries(what = desc, with = type, .protect = F)
+
 tribble(
-   ~`Coding Languages`, ~Software, ~Other,
-  "R -- Python -- SQL -- JavaScript",
-  "QGIS -- Earth Engine -- SAGA -- PostgreSQL -- ArcGIS -- GIMP",
-  "Git -- Markdown -- LaTex -- OpenStreetMap"
+   ~`Tools`, ~Languages, ~Other,
+  "CP Exercise testing -- Echocardiography -- Muscular ultrasound -- Accelerometer -- Force Sensor", # Add Skills from EPIC Environemental chamber # Heat suite home monitoring Device 
+  "French (native) -- English (C1) -- Spanish (B1) ", #Arabic whe applicable
+  "Git -- Markdown -- R -- Canva -- BioRender " # Power LAB #Covidence #OSF # Scite # Connected Paper # Xmind#Suite mircosoft 
 ) |>
 kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
-kable_styling(full_width = F, font_size = 8, latex_options = "HOLD_position") |>
+kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") |>
 row_spec(0, bold = T, color = "#009acd") |>
 row_spec(1, bold = F, color = "#7f7f7f") |>
 column_spec(column = 1:3, width = '4.75cm')
 ```
-<!-- \faIcon{calendar} Organizational skills -->
-<!-- ------------------------------ -->
-```{r events, eval = FALSE}
-# tribble(
-#   ~ event, ~ date, ~ place,
-#   "FOSS4G workshop - sfnetworks: Tidy Geospatial Networks in R \\href{https://github.com/sfnetworks/foss4g-workshop}{\\tiny{\\faIcon{link}}}", "08, 2022", "Florence, Italy",
-#   "e-Rum 2020 satellite event: \\textit{sfnetworks} Webinar and Hackathon \\href{https://2020.erum.io/program/hackathon/}{\\tiny{\\faIcon{link}}}", "06, 2020", "Online Event",
-#   "citizenMorph App Testing Workshop", "09, 2019", "Höfn, IS",
-#   "GeoMundus 2018 \\href{http://www.geomundus.org/2018/}{\\tiny{\\faIcon{link}}}", "12, 2018", "Lisbon, PT",
-#   "I University Simposium of Environmental Science Research", "06, 2016", "Cuenca, EC",
-#   "Vicepresident of the Student Association of Environmental Engineers", "2013 - 2014", "Cuenca, EC",
-# ) |> 
-#   brief_entries(what = event, when = date, with = place, .protect = F)
-```
 
-<!-- \faIcon{users} Memberships -->
-<!-- =============================== -->
 
-```{r org, eval = FALSE}
+
+<!-- # \faIcon{comments} Courses -->
+<!-- ================================ -->
+<!-- ```{r} -->
+<!-- tribble( -->
+<!--   ~ title, ~ details, ~ platform, ~ date, -->
+<!--   "Clinical Research certification", "Good clinical practise", "GIRCI-SOHO", "2021", -->
+<!--   "R studio software", "Tidyverse  packages", "University of Montpellier", "2021", -->
+<!--   "Scilab coding software", "CPET code \\href{https://github.com/Souilla-Luc/CPET_COSMED}{\\tiny{\\faIcon{link}}}", "University of Montpellier", "June,2021", -->
+<!--   "European project and call for proposals", "MSK proposals, CORDIS, EURAXESS", "University of Montpellier", "October, 2021", -->
+<!--   "Management of teamwork","conflict resolution,leadership, sharing experiences ", "University of Montpellier", "December, 2021", -->
+<!--   "Environmental impact of digital network","non-renewable resource, ecological footprint societal impact, ", "FUN MOOC", "01,2022", -->
+<!--   "Pédagogie active", "nudge, gamification, blended-learning","GEN,De Vinci higher Education", "Februry,2022", -->
+<!--   "Science integrity", "Ethical issues, rules to respect", "FUN MOOC", "07, 2022" -->
+<!-- ) %>%  -->
+<!--   detailed_entries(with = title, what = details, where = platform, when = date, .protect=FALSE)   -->
+<!-- ``` -->
+
+\faIcon{users} Memberships
+================================
+
+```{r org}
 tribble(
-  ~ org, ~ date,
-  "R-Ladies Global \\href{https://rladies.org/austria-rladies/name/lorena-abad/}{\\tiny{\\faIcon{link}}}", "since 2020",
-  "Women+ in Geospatial \\href{https://speakers.womeningeospatial.org/speakers}{\\tiny{\\faIcon{link}}}", "since 2020",
-  "European Geosciences Union", "since 2020",
-  "Erasmus Mundus Association", "since 2020"
-) |>
-  brief_entries(what = org, when = date, .protect = F)
+  ~ position, ~ date, ~ org,
+  
+  "Head of Green Researchers team working on evaluation and mitigation of the laboratory carbon footprint", "Aug. 2023-Oct. 2024", "Lab Euromov DHM",
+  "Head of pediatric commitee of the French Society of exercise physiologists", "Jan. 2023-Dec. 2023", "French society of exercise physiologists",
+  "Animator of Climate Fresk workshop in France", "Since 2023", "Climate Fresk Organisation ",
+  "Animator of 2 tonnes workshop in France", "Since 2023","2 Tonnes organization",
+  "Scientific member of QUALINEURO-REHAB European project", "Since 2022","Bordeaux University Hospital-INSERM",
+  
+) %>%
+  brief_entries(what = position, when = date, with= org)
 ```
+
+<!-- # \faIcon{hand-holding-heart} Volunteer work -->
+
+<!-- ```{r volunteer} -->
+<!-- tribble( -->
+<!--   ~ desc, ~ date, -->
+<!--   "Volunteer in solidarity grocery", "2019-2022", -->
+<!--   "Volunteer in humanitary Association","2019", -->
+<!--   "Helping organization SAPATIC GAMES oncology","2018" -->
+<!--   ) %>% -->
+<!--   detailed_entries(what = desc, when = date, .protect = F) -->
+<!-- ``` -->
+
+<!-- # \faIcon{home} Hobbies -->
+
+<!-- ```{r leisure} -->
+<!-- tribble( -->
+<!--   ~ desc, ~details, -->
+<!--   "Soccer Competition","National level and Sport Etudes", -->
+<!--   "Reading", "Ecology, Sports, Non-fiction", -->
+<!--   "Mindfulness and Reflecting", "Hikking, Religion and Spirituality" -->
+<!--   ) %>% -->
+<!--   detailed_entries(what = desc, when = details, .protect = F) -->
+<!-- ``` -->
+
 
 <!-- \faIcon{comment} References -->
 <!-- ============================= -->
 
 <!-- \footnotesize -->
 
-<!-- - **Prof. Dr. Edzer Pebesma**, Institute for Geoinformatics, University of Muenster, edzer.pebesma@uni-muenster.de -->
+<!-- - **Pascal AMEDRO**, (2021-2024), mail: pascal.amedro@chu-bordeaux.fr, Linkedin click [**here**](https://www.linkedin.com/in/pascal-amedro-382b65163/). -->
 
-<!-- - **Prof. Dr. Marco Painho** NOVA Information Management School, painho@novaims.unl.pt -->
+<!-- - **Denis MOTTET**, (2021-2024), mail: denis.mottet@umontpellier.fr, ResearchGate click [**here**](https://www.researchgate.net/profile/Denis-Mottet-2). -->
 
-<!-- - **Dr. Daniel Hölbling**, Department of Geoinformatics - Z\_GIS, PLUS, daniel.hoelbling@plus.ac.at -->
+<!-- - **Karen LAMBERT**, (2019-2020), mail: karen.lambert-cordillac@umontpellier.fr, ResearchGate click [**here**](https://www.researchgate.net/profile/Karen-Lambert-3). -->
 
-<!-- \normalsize -->
 
-<!-- \footnotesize -->
-<!-- \begin{multicols}{3} -->
-<!-- \begin{center} -->
 
-<!-- \textbf{Prof. Dr. Edzer Pebesma} \newline -->
-<!-- \faIcon{phone} +49 251 83-33081 \newline -->
-<!-- \faIcon{at} edzer.pebesma@uni-muenster.de \newline -->
-<!-- \faIcon{envelope} Institute for Geoinformatics \newline -->
-<!-- Heisenbergstraße 2, \newline -->
-<!-- 48149 Münster, Germany -->
+<!-- # \faIcon{plane} Travel Experiences -->
 
-<!-- \textbf{Prof. Dr. Marco Painho} \newline -->
-<!-- \faIcon{phone} +351 213 871 573 \newline -->
-<!-- \faIcon{at} painho@novaims.unl.pt \newline -->
-<!-- \faIcon{envelope} NOVA Information Management School \newline -->
-<!-- Campus de Campolide\newline -->
-<!-- 1070-312 Lisbon, Portugal -->
+<!-- ```{r edu_plot,fig.align='center', fig.width=6.5, fig.height=2.7, fig.showtext=TRUE} -->
+<!-- # -->
+<!-- plane= fontawesome('fa-train') -->
 
-<!-- \textbf{Mag. Daniel Hölbling} \newline -->
-<!-- \faIcon{phone} +43 (0)662 8044 7581 \newline -->
-<!-- \faIcon{at} daniel.hoelbling@plus.ac.at \newline -->
-<!-- \faIcon{envelope} Department of Geoinformatics - Z\_GIS 'newline -->
-<!-- Schillerstrasse 30 \newline -->
-<!-- 5020 Salzburg, Austria -->
-<!-- \end{center} -->
-<!-- \end{multicols} -->
 
-<!-- \normalsize -->
+<!-- # teach = fontawesome('fa-chalkboard') -->
+<!-- world = ne_countries('medium', returnclass = 'sf') -->
+<!-- cities_geom = st_sfc( -->
+<!--     st_point(c(-73.5878100,45.5088400)),# Montreal -->
+<!--     st_point(c(-74.0059700,40.7142700)),# USA -->
+<!--     st_point(c(-75.00453,-2.90055)),# Peru -->
+<!--     st_point(c(-2.22763,52.21374)),# London -->
+<!--     st_point(c(-2.22763,40.21374)),# Spain -->
+<!--     st_point(c(4.22763,50.21374)),#Bruxelles -->
+<!--     st_point(c(6.22763,52.21374)),# Amsterdam -->
+<!--     st_point(c(12.22763,52.21374)),# Berlin -->
+<!--     st_point(c(15.22763,50.21374)),#Praha -->
+<!--     st_point(c(14.22763,46.21374)),# Ljublana -->
+<!--     st_point(c(18.22763,47.21374)),#Budapest -->
+<!--     st_point(c(17.22763,48.21374)),# Bratislava -->
+<!--     st_point(c(16.22763,45.81374)),#Zagreb -->
+<!--     st_point(c(10.22763,45.474)),#Milan -->
+<!--     st_point(c(12.22763,42.31374)),#Rome -->
+<!--     st_point(c(12.8763,46.4374)),#Venise -->
+<!--     st_point(c(9.22763,44.2374))#Genes -->
+<!--   ) -->
+<!-- cities = st_sf( -->
+<!--   name = c('Montreal, Canada', 'New York, USA', 'Lima, Peru','London,England','Barcelone,Spain','Amsterdam,Netherland','Bruxelles,Belgium','Berlin, Germany', 'Praha,Czech Republic','Ljubljana, Slovenia', 'Budapest, Hungary','Bratislava, Slovakia','Zagreb, Croatia', 'Milan, Italie', 'Venise, Italie', 'Rome, Italie', 'Genes, Italie' ), -->
+<!--   geometry = cities_geom -->
+<!--   )%>% -->
+<!--   st_set_crs(4326)%>% -->
+<!--   mutate(label = paste(plane)) -->
+<!--   # -->
+<!-- ggplot() + -->
+<!--   geom_sf(data = world, color = 'white', lwd = 0.1) + -->
+<!--   geom_sf_text( -->
+<!--     data = cities, -->
+<!--     aes(label = label), -->
+<!--     size = 3, -->
+<!--     color = '#009ACD', -->
+<!--     family = "fontawesome-webfont" -->
+<!--   ) + -->
+
+<!--   coord_sf( -->
+<!--     crs = '+proj=robin', -->
+<!--     xlim = c(-10000000, 3000000), -->
+<!--     ylim = c(-650000,6500000) -->
+<!--   ) + -->
+<!--   theme_void() + -->
+<!--   theme( -->
+<!--     plot.margin = margin(-1, 0, -0.5, 0, "cm") -->
+<!--   ) -->
+<!-- ``` -->
+
+
