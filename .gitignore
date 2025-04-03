@@ -2,6 +2,7 @@
 .Renviron
 .Rhistory
 .Rproj.user
+*.Rproj
 .Rproj
 archive/
 Motivation_letters/
