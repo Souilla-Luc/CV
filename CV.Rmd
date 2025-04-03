@@ -37,12 +37,7 @@ library(huxtable)
 library(gridExtra)
 ```
 
-<!-- \faIcon{user-circle} About me -->
-<!-- ============================================ -->
 
-<!-- During my PhD, I assessed health-related physical fitness and physical activity, and implemented cardiac rehabilitation programs for children and adolescents with inherited cardiac diseases. I am currently pursuing a post-doctoral position, concentrating on the impact of heat exposure on the health of children with heart diseases. -->
-
-<!-- | Nationality: French, Birthdate: 28/09/1998 -->
 
 \faIcon{thumbtack} Current position
 ============================================
@@ -50,14 +45,12 @@ library(gridExtra)
 tribble(
   ~ degree, ~ uni, ~ loc, ~ dates, ~ details ,
 
-  "Post-doctoral position", "EPIC center - Montreal Heart Institute", "Montreal, Canada", "Nov. 2024 - Nov. 2026",
-      list("Impact of prolonged heat on health",
+  "Post-doctoral position", "Montreal Heart Institute - University of Montréal", "Montreal, Canada", "Nov. 2024 - Nov. 2026",
+      list("Heat exposure and physiological and perceptual responses",
          "Supervised by Pr. Daniel Gagnon")
 )%>%
 detailed_entries(uni, dates, degree, loc, details)
 ```
-
-
 
 
 \faIcon{university} Education
@@ -68,19 +61,16 @@ detailed_entries(uni, dates, degree, loc, details)
  tribble(
   ~ degree, ~ uni, ~ loc, ~ dates, ~ details ,
 
-  "PhD Fellow and Associate Lecturer", "Sport Science Faculty - Montpellier University", "Montpellier, France", "Oct. 2021 - Sept. 2024",
+  "PhD Fellow and Associate Lecturer", "Sports Science Faculty", "Montpellier, France", "Oct. 2021 - Sept. 2024",
       list("Evaluation and optimisation of physical fitness and physical activity in children with inherited cardiac diseases",
          " Supervised by Pr. Pascal Amedro, Pr.Jean-Luc Pasquie, Pr.Denis Mottet"),
 
-  "MSc degree in sport sciences and exercise rehabilitation", "Sport Science Faculty", "Montpellier, France", "Sep. 2020 - July. 2021",
-      list(" Sciences, Technology, Movement, top of the class."),
+  # "MSc degree in Sports Science and Exercise Rehabilitation", "Sports Science Faculty", "Montpellier, France", "Sep. 2020 - July. 2021",
+  #     list(" Sciences, Technology, Movement"),
 
-  "BSc in sport Sciences - exercise and health", "Sport Science Faculty", "Toulouse and Montpellier, France", "Sep. 2018 - July. 2019",
-  list(" Exercise and chronic conditions, top of the class. ")
+  # "BSc in Sports Science - Exercise and Health", "Sports Science Faculty", "Toulouse and Montpellier, France", "Sep. 2018 - July. 2019",
+  # list(" Exercise and chronic conditions ")
 
- # "High-School Diploma in Science", "Pierre D'Aragon High School", "Muret, France", #"Sep. 2016 - July. 2017",
-  #list("Physics, Chemistry, Maths, Life sciences.",
-    #   "good rank.")
   )%>%
   detailed_entries(uni, dates, degree, loc, details)
 ```
@@ -111,7 +101,7 @@ detailed_entries(uni, dates, degree, loc, details)
 
 - Gavotto, A., Mura, T., [...], **Souilla, L.**, [...], Amedro, P. (2023). [*Reference values of aerobic fitness in the contemporary paediatric population*]( https://doi.org/10.1093/eurjpc/zwad054). European Journal of Preventive Cardiology.
 
-- Amedro, P., Werner,O., [...], **Souilla, L.**, [...], Pasquie, JL. (2021). [*Health-related quality of life and physical activity in children with inherited cardiac arrhythmia or inherited cardiomyopathy: the prospective multicentre controlled QUALIMYORYTHM study rationale, design and methods*](https://doi.org/10.1186/s12955-021-01825-6). Health Qual Life Outcomes., 28;19(1):187.
+<!-- - Amedro, P., Werner,O., [...], **Souilla, L.**, [...], Pasquie, JL. (2021). [*Health-related quality of life and physical activity in children with inherited cardiac arrhythmia or inherited cardiomyopathy: the prospective multicentre controlled QUALIMYORYTHM study rationale, design and methods*](https://doi.org/10.1186/s12955-021-01825-6). Health Qual Life Outcomes., 28;19(1):187. -->
 
 ```{r, out.width='57%', fig.align='center', fig.link="https://www.fabiocrameri.ch/proac/"}
 knitr::include_graphics("ProAc/ProAc-LucSouilla-2025-Apr.png")
@@ -121,73 +111,34 @@ knitr::include_graphics("ProAc/ProAc-LucSouilla-2025-Apr.png")
 
 
 \normalsize
+\newpage
 
+<!-- \faIcon{briefcase} Professional Experience -->
+<!-- ============================================ -->
 
-\faIcon{briefcase} Professional Experience
-============================================
+<!-- ```{r experience, eval = T} -->
+<!-- tribble( -->
+<!--   ~ position, ~ place, ~ loc, ~ dates, ~ details , -->
 
-```{r experience, eval = T}
-tribble(
-  ~ position, ~ place, ~ loc, ~ dates, ~ details ,
-  
-  "Project manager","University of Sport Science","Montpellier, France", "Sept. 2023 - January. 2024",
-    list("Kickoff event on Sports and Climate Change", 
-         "Organizing an awareness day on climate change and the impact of sports for students"),
-  
-  "Research Mobility", "Southern Denmark University - Department of Sport Sciences and Clinical Biomechanics", "Odense, Denmark", "May. 2023 - July. 2023",
-      list("ERC projet MOBILIZE",
-         "Effect of tailored exercise program on multimorbidity / Systematic review on physical activity, childhood and multimorbidity"),
-  
-  "Research intern", "PhyMedExp - INSERM U1046", "Montpellier, France", "Sep. 2020 - July. 2021",
-      list("Supervised by Pascal Amedro",
-         "Cardiorespiratory fitness and muscular deconditioning in congenital Long QT syndrome children"),
+<!--   "Project manager","University of Sports Science","Montpellier, France", "Sept. 2023 - January. 2024", -->
+<!--     list("Kickoff event on Sports and Climate Change",  -->
+<!--          "Organizing an awareness day on climate change and the impact of sports for students"), -->
 
-  "Research intern", "PhyMedExp - INSERM U1046", "Montpellier, France", "Sep. 2019 - July. 2020",
-  list("Supervised by Karen Lambert",
-         "Effects of exercise and polyphenols supplementation on cardiac hypertrophy in obese insulino-resistant rats."),
+<!--   "Research Mobility", "Southern Denmark University - Department of Sports Science and Clinical Biomechanics", "Odense, Denmark", "May. 2023 - July. 2023", -->
+<!--       list("ERC projet MOBILIZE", -->
+<!--          "Effect of tailored exercise program on multimorbidity / Systematic review on physical activity, childhood and multimorbidity"), -->
 
-  #"Adapted Physical Activity Teacher", "Paediatric Rehabilitation Center", "Palavas-Les-Flots, France", "July. 2019",
-  #list("Cardiology, Obesity and Diabetes ",
-         #"Creation and animation of adapted training sessions based on multiple physical activities")
+<!--   "Research intern", "PhyMedExp - INSERM U1046", "Montpellier, France", "Sep. 2020 - July. 2021", -->
+<!--       list("Supervised by Pascal Amedro", -->
+<!--          "Cardiorespiratory fitness and muscular deconditioning in congenital Long QT syndrome children"), -->
 
-  #"Adapted Physical activity intern Student", "Paediatric Rehabilitation Center", "Palavas-Les-Flots, France", "January. 2019",
- # list(" Cardiology, Obesity and Motricity disabilities ",
-       #  "Creation and animation of adapted training sessions based on multiple physical activities"),
+<!--   "Research intern", "PhyMedExp - INSERM U1046", "Montpellier, France", "Sep. 2019 - July. 2020", -->
+<!--   list("Supervised by Karen Lambert", -->
+<!--          "Effects of exercise and polyphenols supplementation on cardiac hypertrophy in obese insulino-resistant rats."), -->
 
-  # "Employé Municipal", "Mairie Montesquieu", "Montesquieu-Volvestre, France", "Summer. 2019",
-  #list(" 5 semaines - 105h ",
-    #     "Entretien des aespaces verts, organisation de fête du village"),
-
-  #"Stagiaire EAPA", "Étincelle occitanie", "Montpellier, France", "2018",
- # list(" Maison associative cancer du sein - 75h ",
-   #      "Création de séances d'APA pour les femmes ayant eu un cancer du sein"),
-
-   #" Stagiaire EAPA", "Réseau Partn'Air ", "Saint_orens, France", "2018",
- # list(" Réseau de santé pathologies respiratoires et hémopathies maligne ",
-    #     "Création de séances d'APA pour des patients en centre ou domicile ayant une affectation respiratoire"),
-
-  #" Stagiaire EAPA", "SADIR Assistance", "Portet-Sur-Garonne, France", "2017",
- # list(" Prestataire de santé avec pathologies respiratoires- 50h ",
-    #     "Création de séances d'APA pour des patients ayant une affectation respiratoire"),
-
-  #" Préparateur Physique EAPA", "Iron Club", "Toulouse France", "2018",
-  #list(" Basket Fauteuil- Professionnel ",
-       #  "Animation séance cardio et Renforcement musculaire"),
-
-  #" Stagiaire EAPA", "A.S.E.I Philae", "Ramonville, France", "2018",
-#  list(" Centre d'accueil pour enfants/ado atant des affections neurologiques- 50h ",
-        # "Création de séances d'APA, observation, rendu rapport de stage"),
-
- # " Employé logistique ", "IKEA", "Roques-Sur-Garonne, France", "2017",
-  #list("Travail dépot et magasin ",
-        # "Port d'objets lourds, mise en rayon, conseil client"),
-
-  #" Employé libre service ", "Carrefour City", "Toulouse, France", "2017",
-  #list("Caisse et facing dans rayon ",
-     #    "Rayon boulangerie, caisse, fermeture magasin, nettoyage"),
-  )%>%
-  detailed_entries(place, dates, position, loc, details)
-```
+<!--   )%>% -->
+<!--   detailed_entries(place, dates, position, loc, details) -->
+<!-- ``` -->
 
 \faIcon{chalkboard} Teaching Experience
 ============================================
@@ -199,12 +150,9 @@ tribble(
 
   " Associate lecturer", "University of Montpellier","Montpellier, France", "2022-2024",
       list("Climate change, sustainability and sport sciences",
-        "Cardiac anatomy and physiology", "functional anatomy and biomechanics", "exercise physiology and health, neurosciences and sports","Scientific methods and identification of study design"
-          )
+        "Cardiac anatomy and Physiology", "Functional Anatomy and Biomechanics", "Exercise physiology and Health") #Neurosciences and Sports","Scientific methods and identification of study design")
+          
 
-  # "Mentoring Student Certification ", "University of Montpellier - 150 hours","Montpellier, France", "2019 - 2021",
-  #     list(" Helping bachelor's student in Sports sciences students",
-  #     "Exercise Biomechanics, exercise physiology, functional anatomy and neurosciences"),
 )%>%
   detailed_entries(type, dates, position, loc, details)
 ```
@@ -225,146 +173,69 @@ tribble(
       list("Exercise rehabilitation program for children with long QT syndrome "),
 
   "PhD fellowship", "From ED CBS2 Montpellier university ","110 000€", "Oct.2021-2024",
-      list(" PhD fellowship on promotion of adapted physical activity in children/adolescent with heart diseases :example of inherited arrhytmias "),
+      list(" PhD fellowship on promotion of adapted physical activity in children/adolescent with heart diseases :example of inherited arrhytmias \\href{https://www.phymedexp.com/theses-soutenues-d/}{\\tiny{\\faIcon{link}}} "),
 
-  #"QUALIREHAB-ONCO: Effect of home based exercise rehabilitation program on  childhood cancer survivors ", "From ARC: Fundation for cancer research" ,"450 000$", "June 2021",
-  #list("Creation and drafting exercise program for childhood cancer survivors, final proof reading \\href{https://www.fondation-arc.org/projets/qualirehab-onco-remettre-les-enfants-au-sport-apres-un-cancer}{\\tiny{\\faIcon{link}}} ")
+  "QUALIREHAB-ONCO: Effect of home based exercise rehabilitation program on  childhood cancer survivors ", "From ARC: Fundation for cancer research" ,"450 000$", "June 2021",
+  list("Creation and drafting exercise program for childhood cancer survivors, final proof reading \\href{https://www.fondation-arc.org/projets/qualirehab-onco-remettre-les-enfants-au-sport-apres-un-cancer}{\\tiny{\\faIcon{link}}} ")
 
-  # "European Joint Programme on rare diseases ", "Bordeaux Hospital, France - Saint Luc, Belgium - Deustches Herzzentrum Munchen, Germany","650 000$", "2021",
-  #     list(" Helping drafting the physical activity part, final proofreading"),
-  #
+  
 )%>%
   detailed_entries(origin, amount, name, dates, details)
 ```
 
 
 
-\faIcon{handshake} Supervision mentoring
-============================================
-
-```{r}
-
-tribble(
-  ~ student, ~ type, ~ loc, ~ dates, ~ details ,
-  
-   "Mentoring MSc Student", "Sports Science University ","Bordeaux, France", "Oct. 2023-Oct. 2024",
-      list("Trained to cardiopulmonary exercise testing and accelerometry and designing research protocols",
-           "Help designing research protocol and writing dissertation and call for funding"), 
-  
-  "Mentoring BSc Student", "Sports Science University", "Montpellier, France", "Oct. 2023-Dec. 2023",
-      list("Mentoring student on the kickoff event on Sports and Climate Change",
-           "Individual support for developing their personals projects"),
-
-  "Mentoring MSc Student", "University Hospital of Pediatric Cardiology ","Bordeaux, France", "January 2023",
-      list("Help designing exercise interventions and writing dissertation and call for funding"),
 
 
- # "Mentoring BSc Student", "Cardiology Paediatric Rehabilitation center ","Palavas-Les-Flots, France", "January 2022",
-     # list("Mentoring Julie Voldoire (BSc student) during their internship and discover scientifc area"),
+<!-- \faIcon{comment} Communications -->
+<!-- ============================================ -->
 
-)%>%
-  detailed_entries(type, dates, student, loc, details)
-```
+<!-- ```{r} -->
+<!-- tribble( -->
+<!--   ~ event, ~ type, ~ loc, ~ dates, ~ details , -->
 
+<!--   # "Scientific Research Day of Kinesiology and Physical Activity School ", "Poster Presentation", "Montréal, Canada", "March 2025", -->
+<!--   #     list("Souilla L. (2025). In situ responses of elderly people living in social housing before, during, and after a heatwave. "), -->
 
-\faIcon{comment} Communications
-============================================
+<!--   # "Centre ÉPIC MENSUELLE", "Oral Presentation","Montréal, Canada", "February 2025", -->
+<!--   #     list("Souilla L. (2025). Health-related physical fitness, physical activity and cardiac rehabilitation in children and adolescents with inhertied cardiac condition: a promising future?. "), -->
 
-```{r}
-tribble(
-  ~ event, ~ type, ~ loc, ~ dates, ~ details ,
-  
-  # "Scientific Research Day of Kinesiology and Physical Activity School ", "Poster Presentation", "Montréal, Canada", "March 2025",
-  #     list("Souilla L. (2025). In situ responses of elderly people living in social housing before, during, and after a heatwave. "),
-  
-  # "Centre ÉPIC MENSUELLE", "Oral Presentation","Montréal, Canada", "February 2025",
-  #     list("Souilla L. (2025). Health-related physical fitness, physical activity and cardiac rehabilitation in children and adolescents with inhertied cardiac condition: a promising future?. "),
-  
-  # "International Congress of Association for European Paediatric Congenital Cardiology", "Poster Presentation","Hamburg, Germany", "May 2025",
-  #     list("Souilla L. (2025). Cardiopulmonary fitness and physical activity in pediatric inherited cardiac disease. "),
-  
-   "International Congress of Association for European Paediatric Congenital Cardiology", "Oral Presentation","Porto, Portugal", "May 2024",
-      list("Souilla L., Guillaumont S., ..., Amedro P.(2024). Cardiac rehabilitation in children and adolescents with long QT syndrome: the RYTHMO’FIT pilot study. International Congress of Association for European Paediatric Congenital Cardiology"),
-  
-  "Heart and sport days of Cardiogen", "Oral Presentation", "Montpellier, France", "Jan. 2024",
-      list("Souilla L.(2024). Role of adapted physical activity in pediatric cardiac rehabilitation. Heart and sport days of Cardiogen"),
-  
-  "French federatation of Cardiology", "Oral Presentation", "Paris, France", "Sep. 2023",
-      list("Souilla L., Werner O., ..., Amedro P.(2023). Health-related quality of life and physical activity in children with inherited cardiac arrhythmia or inherited cardiomyopathy: the prospective multicentre controlled QUALIMYORYTHM. Research days of French federation of cardiology"),
-  
-  "International Congress of Francophone Mother-Children network", "Oral presentation","Bordeaux, France", "June 2022",
-      list(" Souilla L.(2022). Adapted physical activity teacher: on the right track. International Congress of Francophone Mother-Children network"),
+<!--   # "International Congress of Association for European Paediatric Congenital Cardiology", "Poster Presentation","Hamburg, Germany", "May 2025", -->
+<!--   #     list("Souilla L. (2025). Cardiopulmonary fitness and physical activity in pediatric inherited cardiac disease. "), -->
 
-  "French society of Paediatric", "Oral presentation","Lille, France", "June 2022",
-      list("Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022).  Cardiorespiratory fitness and muscular deconditioning children with Long QT syndrome. French society of Paediatric"),
+<!--    "International Congress of Association for European Paediatric Congenital Cardiology", "Oral Presentation","Porto, Portugal", "May 2024", -->
+<!--       list("Souilla L., Guillaumont S., ..., Amedro P.(2024). Cardiac rehabilitation in children and adolescents with long QT syndrome: the RYTHMO’FIT pilot study. International Congress of Association for European Paediatric Congenital Cardiology"), -->
 
-  "International Congress of Association for European Paediatric Congenital Cardiology", "Poster Presentation","Geneve, Switzerland", "May 2022",
-      list("Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022). Cardiorespiratory fitness and muscular deconditioning children with Long QT syndrome. International Congress of Association for European Paediatric Congenital Cardiology"),
+<!--   "Heart and sport days of Cardiogen", "Oral Presentation", "Montpellier, France", "Jan. 2024", -->
+<!--       list("Souilla L.(2024). Role of adapted physical activity in pediatric cardiac rehabilitation. Heart and sport days of Cardiogen"), -->
 
-  "Annual days of Cardiogen", "Oral presentation","Bordeaux, France", "March 2022",
-     list(" Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022). Evaluation of cardiorespiratory fitness and muscular deconditioning in children with Long QT syndrome. Annual days of Cardiogen"),
+<!--   "French federatation of Cardiology", "Oral Presentation", "Paris, France", "Sep. 2023", -->
+<!--       list("Souilla L., Werner O., ..., Amedro P.(2023). Health-related quality of life and physical activity in children with inherited cardiac arrhythmia or inherited cardiomyopathy: the prospective multicentre controlled QUALIMYORYTHM. Research days of French federation of cardiology"), -->
 
-  "Congress of French society of Paediatrics and congenital cardiology ", "Oral presentation","Nice, France", "Sept. 2021",
-      list("Souilla L.(2021). Exercise rehabilitation in heart failure. Congress of French society of Paediatrics and congenital cardiology"),
+<!--   "International Congress of Francophone Mother-Children network", "Oral presentation","Bordeaux, France", "June 2022", -->
+<!--       list(" Souilla L.(2022). Adapted physical activity teacher: on the right track. International Congress of Francophone Mother-Children network"), -->
 
-  #"Scientific Research Day of adapted physical activity", "Poster presentation","Montpellier, France", "April, 2019",
-  #    list("Souilla L., Home-based exercise program for management of tiredness post-transplantation. Days of adapted physical"),
-)%>%
-  detailed_entries(type, dates, event, loc, details)
+<!--   "French society of Paediatric", "Oral presentation","Lille, France", "June 2022", -->
+<!--       list("Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022).  Cardiorespiratory fitness and muscular deconditioning children with Long QT syndrome. French society of Paediatric"), -->
 
-```
+<!--   "International Congress of Association for European Paediatric Congenital Cardiology", "Poster Presentation","Geneve, Switzerland", "May 2022", -->
+<!--       list("Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022). Cardiorespiratory fitness and muscular deconditioning children with Long QT syndrome. International Congress of Association for European Paediatric Congenital Cardiology"), -->
+
+<!--   "Annual days of Cardiogen", "Oral presentation","Bordeaux, France", "March 2022", -->
+<!--      list(" Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022). Evaluation of cardiorespiratory fitness and muscular deconditioning in children with Long QT syndrome. Annual days of Cardiogen"), -->
+
+<!--   "Congress of French society of Paediatrics and congenital cardiology ", "Oral presentation","Nice, France", "Sept. 2021", -->
+<!--       list("Souilla L.(2021). Exercise rehabilitation in heart failure. Congress of French society of Paediatrics and congenital cardiology"), -->
+
+<!--   #"Scientific Research Day of adapted physical activity", "Poster presentation","Montpellier, France", "April, 2019", -->
+<!--   #    list("Souilla L., Home-based exercise program for management of tiredness post-transplantation. Days of adapted physical"), -->
+<!-- )%>% -->
+<!--   detailed_entries(type, dates, event, loc, details) -->
+
+<!-- ``` -->
 
 
-<!--
-\faIcon{lightbulb} Projects
-=====================================
 
-\smallskip
-
-\faIcon{satellite} Research projects
----------------------------------
-<!-- \par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt} -->
-
-<!--
-```{r proj}
-#tribble(
- # ~ name, ~ acronym, ~ date, ~ study_type,
-
-#"Quality of life exercise capacity and physical activity of children with inherited cardiac disease", "QUALIYMORYTHM", "2021 - 2023",("Multicentric Controlled Trial \\href{https://clinicaltrials.gov/ct2/show/NCT04712136/}{\\tiny{\\faIcon{link}}}"),
-
-#"Exercise rehabilitation of children with long QT", "RYTHMO'FIT", "2022 - 2023",("Interventional Pilot study"), #\\href{https://clinicaltrials.gov/ct2/show/NCT04712136/}{\\tiny{\\faIcon{link}}}"),
-
-#"Home based exercise rehabilitation and cognitive training in children and adolescent with congenital heart defect", "QUALINEUROREHAB", "2023 - 2025",("European interventional trial \\href{https://clinicaltrials.gov/ct2/show/NCT05670132}{\\tiny{\\faIcon{link}}}"),
-
-#"Exercise rehabilitation for children with congenital heart defects and physical activity of children with inherited cardiac disease", "QUALIREHAB", "2018 - 2023",("Randomised Controlled Trial \\href{https://clinicaltrials.gov/ct2/show/NCT03690518}{\\tiny{\\faIcon{link}}}"),
-
-#penser  a ajouter etude sur envionnement avec Shawnda et L'étude avec danemark
-#)%>%
-#detailed_entries(with = acronym, what = name, when = date, where = study_type,
-#.protect=FALSE)
-```
-
-\smallskip
-
-
-<!-- \faIcon{medal} Awards & Distinctions -->
-<!-- =============================== -->
-
-```{r dist}
-# tribble(
-#   ~ area, ~ org, ~ date,
-#   "FOSS4G 2022 conference - travel grant", "OSGeo Foundation", "2022",
-#   "Copernicus Masters Austria price (2nd place)", "Copernicus Masters", "2020",
-#   "ISC funding for {sfnetworks}", "R-Consortium", "2019",
-#   "Benigno Malo Prize - University Honors Award", "Universidad de Cuenca", "2018",
-#   "AGILE 2018 conference - travel grant", "AGILE \\& ESRI", "2018",
-#   "Erasmus Mundus Scholarship", "European Commission", "2017",
-#   # "Best Scientific Poster - 2nd International Summer School \\newline 
-# # ``The Biodiversity of Genes, Species and Ecosystems''", "Universität Osnabrück","2015",
-#   "Vanguardia Honors Program", "Universidad de Cuenca", "2014 - 2016"
-# ) |> 
-#   brief_entries(what = area, when = date, with = org, .protect = F)
-```
 
 
 \faIcon{brain} Skills
@@ -406,133 +277,21 @@ column_spec(column = 1:3, width = '4.75cm')
 ```
 
 
-
-<!-- # \faIcon{comments} Courses -->
+<!-- \faIcon{users} Memberships -->
 <!-- ================================ -->
-<!-- ```{r} -->
+
+<!-- ```{r org} -->
 <!-- tribble( -->
-<!--   ~ title, ~ details, ~ platform, ~ date, -->
-<!--   "Clinical Research certification", "Good clinical practise", "GIRCI-SOHO", "2021", -->
-<!--   "R studio software", "Tidyverse  packages", "University of Montpellier", "2021", -->
-<!--   "Scilab coding software", "CPET code \\href{https://github.com/Souilla-Luc/CPET_COSMED}{\\tiny{\\faIcon{link}}}", "University of Montpellier", "June,2021", -->
-<!--   "European project and call for proposals", "MSK proposals, CORDIS, EURAXESS", "University of Montpellier", "October, 2021", -->
-<!--   "Management of teamwork","conflict resolution,leadership, sharing experiences ", "University of Montpellier", "December, 2021", -->
-<!--   "Environmental impact of digital network","non-renewable resource, ecological footprint societal impact, ", "FUN MOOC", "01,2022", -->
-<!--   "Pédagogie active", "nudge, gamification, blended-learning","GEN,De Vinci higher Education", "Februry,2022", -->
-<!--   "Science integrity", "Ethical issues, rules to respect", "FUN MOOC", "07, 2022" -->
-<!-- ) %>%  -->
-<!--   detailed_entries(with = title, what = details, where = platform, when = date, .protect=FALSE)   -->
-<!-- ``` -->
+<!--   ~ position, ~ date, ~ org, -->
 
-\faIcon{users} Memberships
-================================
+<!--   "Head of Green Researchers team working on evaluation and mitigation of the laboratory carbon footprint", "Aug. 2023-Oct. 2024", "Lab Euromov DHM", -->
+<!--   "Head of pediatric commitee of the French Society of exercise physiologists", "Jan. 2023-Dec. 2023", "French society of exercise physiologists", -->
+<!--   "Animator of Climate Fresk workshop in France", "Since 2023", "Climate Fresk Organisation ", -->
+<!--   "Animator of 2 tonnes workshop in France", "Since 2023","2 Tonnes organization", -->
+<!--   "Scientific member of QUALINEURO-REHAB European project", "Since 2022","Bordeaux University Hospital-INSERM", -->
 
-```{r org}
-tribble(
-  ~ position, ~ date, ~ org,
-  
-  "Head of Green Researchers team working on evaluation and mitigation of the laboratory carbon footprint", "Aug. 2023-Oct. 2024", "Lab Euromov DHM",
-  "Head of pediatric commitee of the French Society of exercise physiologists", "Jan. 2023-Dec. 2023", "French society of exercise physiologists",
-  "Animator of Climate Fresk workshop in France", "Since 2023", "Climate Fresk Organisation ",
-  "Animator of 2 tonnes workshop in France", "Since 2023","2 Tonnes organization",
-  "Scientific member of QUALINEURO-REHAB European project", "Since 2022","Bordeaux University Hospital-INSERM",
-  
-) %>%
-  brief_entries(what = position, when = date, with= org)
-```
-
-<!-- # \faIcon{hand-holding-heart} Volunteer work -->
-
-<!-- ```{r volunteer} -->
-<!-- tribble( -->
-<!--   ~ desc, ~ date, -->
-<!--   "Volunteer in solidarity grocery", "2019-2022", -->
-<!--   "Volunteer in humanitary Association","2019", -->
-<!--   "Helping organization SAPATIC GAMES oncology","2018" -->
-<!--   ) %>% -->
-<!--   detailed_entries(what = desc, when = date, .protect = F) -->
-<!-- ``` -->
-
-<!-- # \faIcon{home} Hobbies -->
-
-<!-- ```{r leisure} -->
-<!-- tribble( -->
-<!--   ~ desc, ~details, -->
-<!--   "Soccer Competition","National level and Sport Etudes", -->
-<!--   "Reading", "Ecology, Sports, Non-fiction", -->
-<!--   "Mindfulness and Reflecting", "Hikking, Religion and Spirituality" -->
-<!--   ) %>% -->
-<!--   detailed_entries(what = desc, when = details, .protect = F) -->
-<!-- ``` -->
-
-
-<!-- \faIcon{comment} References -->
-<!-- ============================= -->
-
-<!-- \footnotesize -->
-
-<!-- - **Pascal AMEDRO**, (2021-2024), mail: pascal.amedro@chu-bordeaux.fr, Linkedin click [**here**](https://www.linkedin.com/in/pascal-amedro-382b65163/). -->
-
-<!-- - **Denis MOTTET**, (2021-2024), mail: denis.mottet@umontpellier.fr, ResearchGate click [**here**](https://www.researchgate.net/profile/Denis-Mottet-2). -->
-
-<!-- - **Karen LAMBERT**, (2019-2020), mail: karen.lambert-cordillac@umontpellier.fr, ResearchGate click [**here**](https://www.researchgate.net/profile/Karen-Lambert-3). -->
-
-
-
-<!-- # \faIcon{plane} Travel Experiences -->
-
-<!-- ```{r edu_plot,fig.align='center', fig.width=6.5, fig.height=2.7, fig.showtext=TRUE} -->
-<!-- # -->
-<!-- plane= fontawesome('fa-train') -->
-
-
-<!-- # teach = fontawesome('fa-chalkboard') -->
-<!-- world = ne_countries('medium', returnclass = 'sf') -->
-<!-- cities_geom = st_sfc( -->
-<!--     st_point(c(-73.5878100,45.5088400)),# Montreal -->
-<!--     st_point(c(-74.0059700,40.7142700)),# USA -->
-<!--     st_point(c(-75.00453,-2.90055)),# Peru -->
-<!--     st_point(c(-2.22763,52.21374)),# London -->
-<!--     st_point(c(-2.22763,40.21374)),# Spain -->
-<!--     st_point(c(4.22763,50.21374)),#Bruxelles -->
-<!--     st_point(c(6.22763,52.21374)),# Amsterdam -->
-<!--     st_point(c(12.22763,52.21374)),# Berlin -->
-<!--     st_point(c(15.22763,50.21374)),#Praha -->
-<!--     st_point(c(14.22763,46.21374)),# Ljublana -->
-<!--     st_point(c(18.22763,47.21374)),#Budapest -->
-<!--     st_point(c(17.22763,48.21374)),# Bratislava -->
-<!--     st_point(c(16.22763,45.81374)),#Zagreb -->
-<!--     st_point(c(10.22763,45.474)),#Milan -->
-<!--     st_point(c(12.22763,42.31374)),#Rome -->
-<!--     st_point(c(12.8763,46.4374)),#Venise -->
-<!--     st_point(c(9.22763,44.2374))#Genes -->
-<!--   ) -->
-<!-- cities = st_sf( -->
-<!--   name = c('Montreal, Canada', 'New York, USA', 'Lima, Peru','London,England','Barcelone,Spain','Amsterdam,Netherland','Bruxelles,Belgium','Berlin, Germany', 'Praha,Czech Republic','Ljubljana, Slovenia', 'Budapest, Hungary','Bratislava, Slovakia','Zagreb, Croatia', 'Milan, Italie', 'Venise, Italie', 'Rome, Italie', 'Genes, Italie' ), -->
-<!--   geometry = cities_geom -->
-<!--   )%>% -->
-<!--   st_set_crs(4326)%>% -->
-<!--   mutate(label = paste(plane)) -->
-<!--   # -->
-<!-- ggplot() + -->
-<!--   geom_sf(data = world, color = 'white', lwd = 0.1) + -->
-<!--   geom_sf_text( -->
-<!--     data = cities, -->
-<!--     aes(label = label), -->
-<!--     size = 3, -->
-<!--     color = '#009ACD', -->
-<!--     family = "fontawesome-webfont" -->
-<!--   ) + -->
-
-<!--   coord_sf( -->
-<!--     crs = '+proj=robin', -->
-<!--     xlim = c(-10000000, 3000000), -->
-<!--     ylim = c(-650000,6500000) -->
-<!--   ) + -->
-<!--   theme_void() + -->
-<!--   theme( -->
-<!--     plot.margin = margin(-1, 0, -0.5, 0, "cm") -->
-<!--   ) -->
+<!-- ) %>% -->
+<!--   brief_entries(what = position, when = date, with= org) -->
 <!-- ``` -->
 
 
