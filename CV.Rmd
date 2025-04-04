@@ -122,7 +122,7 @@ knitr::include_graphics("ProAc/ProAc-LucSouilla-2025-Apr.png")
 
 <!--   "Project manager","University of Sports Science","Montpellier, France", "Sept. 2023 - January. 2024", -->
 <!--     list("Kickoff event on Sports and Climate Change",  -->
-<!--          "Organizing an awareness day on climate change and the impact of sports for students"), -->
+<!--          "Student awareness day on climate change and the environmental impact of sports"), -->
 
 <!--   "Research Mobility", "Southern Denmark University - Department of Sports Science and Clinical Biomechanics", "Odense, Denmark", "May. 2023 - July. 2023", -->
 <!--       list("ERC projet MOBILIZE", -->
@@ -194,20 +194,11 @@ tribble(
 <!-- tribble( -->
 <!--   ~ event, ~ type, ~ loc, ~ dates, ~ details , -->
 
-<!--   # "Scientific Research Day of Kinesiology and Physical Activity School ", "Poster Presentation", "Montréal, Canada", "March 2025", -->
-<!--   #     list("Souilla L. (2025). In situ responses of elderly people living in social housing before, during, and after a heatwave. "), -->
-
-<!--   # "Centre ÉPIC MENSUELLE", "Oral Presentation","Montréal, Canada", "February 2025", -->
-<!--   #     list("Souilla L. (2025). Health-related physical fitness, physical activity and cardiac rehabilitation in children and adolescents with inhertied cardiac condition: a promising future?. "), -->
-
-<!--   # "International Congress of Association for European Paediatric Congenital Cardiology", "Poster Presentation","Hamburg, Germany", "May 2025", -->
-<!--   #     list("Souilla L. (2025). Cardiopulmonary fitness and physical activity in pediatric inherited cardiac disease. "), -->
+<!--    "Scientific Research Day of Kinesiology and Physical Activity School ", "Poster Presentation", "Montréal, Canada", "March 2025", -->
+<!--        list("Souilla L. (2025). In situ responses of elderly people living in social housing before, during, and after a heatwave. "), -->
 
 <!--    "International Congress of Association for European Paediatric Congenital Cardiology", "Oral Presentation","Porto, Portugal", "May 2024", -->
 <!--       list("Souilla L., Guillaumont S., ..., Amedro P.(2024). Cardiac rehabilitation in children and adolescents with long QT syndrome: the RYTHMO’FIT pilot study. International Congress of Association for European Paediatric Congenital Cardiology"), -->
-
-<!--   "Heart and sport days of Cardiogen", "Oral Presentation", "Montpellier, France", "Jan. 2024", -->
-<!--       list("Souilla L.(2024). Role of adapted physical activity in pediatric cardiac rehabilitation. Heart and sport days of Cardiogen"), -->
 
 <!--   "French federatation of Cardiology", "Oral Presentation", "Paris, France", "Sep. 2023", -->
 <!--       list("Souilla L., Werner O., ..., Amedro P.(2023). Health-related quality of life and physical activity in children with inherited cardiac arrhythmia or inherited cardiomyopathy: the prospective multicentre controlled QUALIMYORYTHM. Research days of French federation of cardiology"), -->
@@ -221,15 +212,6 @@ tribble(
 <!--   "International Congress of Association for European Paediatric Congenital Cardiology", "Poster Presentation","Geneve, Switzerland", "May 2022", -->
 <!--       list("Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022). Cardiorespiratory fitness and muscular deconditioning children with Long QT syndrome. International Congress of Association for European Paediatric Congenital Cardiology"), -->
 
-<!--   "Annual days of Cardiogen", "Oral presentation","Bordeaux, France", "March 2022", -->
-<!--      list(" Souilla L., Avesani M., Boisson A., Pasquie JL., Amedro P.(2022). Evaluation of cardiorespiratory fitness and muscular deconditioning in children with Long QT syndrome. Annual days of Cardiogen"), -->
-
-<!--   "Congress of French society of Paediatrics and congenital cardiology ", "Oral presentation","Nice, France", "Sept. 2021", -->
-<!--       list("Souilla L.(2021). Exercise rehabilitation in heart failure. Congress of French society of Paediatrics and congenital cardiology"), -->
-
-<!--   #"Scientific Research Day of adapted physical activity", "Poster presentation","Montpellier, France", "April, 2019", -->
-<!--   #    list("Souilla L., Home-based exercise program for management of tiredness post-transplantation. Days of adapted physical"), -->
-<!-- )%>% -->
 <!--   detailed_entries(type, dates, event, loc, details) -->
 
 <!-- ``` -->
@@ -248,7 +230,7 @@ tribble(
 ```{r workplace skills, results='markup'}
 tribble(
     ~ Teamwork, ~Attributs,
-"Pluridisciplinary Working -- Effective communication -- Autonomous writing -- Management of national clinicals trials (coordination and call for proposal)",
+"Pluridisciplinary Working -- Effective communication -- Autonomous writing -- Management of national clinicals trials",
   "Creativity -- Adaptability -- Time management -- Motivation -- Relationship skills"
 ) %>%
   kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
@@ -265,9 +247,9 @@ tribble(
 
 tribble(
    ~`Tools`, ~Languages, ~Other,
-  "CP Exercise testing -- Echocardiography -- Muscular ultrasound -- Accelerometer -- Force Sensor", # Add Skills from EPIC Environemental chamber # Heat suite home monitoring Device 
-  "French (native) -- English (C1) -- Spanish (B1) ", #Arabic whe applicable
-  "Git -- Markdown -- R -- Canva -- BioRender " # Power LAB #Covidence #OSF # Scite # Connected Paper # Xmind#Suite mircosoft 
+  "CP Exercise testing -- Echocardiography -- Muscular ultrasound -- Accelerometer -- Force Sensor", 
+  "French (native) -- English (C1) -- Spanish (B1) ", 
+  "Git -- Markdown -- R -- Canva -- BioRender "  #Covidence #OSF # Scite
 ) |>
 kable(booktabs = T, align = 'c', escape = F, format = "latex") |>
 kable_styling(full_width = F, font_size = 10, latex_options = "HOLD_position") |>
